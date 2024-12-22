@@ -1,1 +1,0 @@
-/Users/higaki/rust/restaurant/target/debug/librestaurant.rlib: /Users/higaki/rust/restaurant/src/front_of_house/hosting/mod.rs /Users/higaki/rust/restaurant/src/front_of_house/mod.rs /Users/higaki/rust/restaurant/src/lib.rs
