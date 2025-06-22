@@ -24,23 +24,20 @@ struct Ipv6Addr (u8, u8, u8, u8, u8, u8, u8, u8);
 
 impl IpAddr {
     fn is_v4(&self) -> bool {
-        match *self {
+        match self {
             Self::V4(_) => true,
             _ => false,
         }
     }
 
     fn is_v6(&self) -> bool {
-        match *self {
-            Self::V6(_) => true,
-            _ => false,
-        }
+        matches!(self, Self::V6(_))
     }
 
     fn octets(&self) -> Vec<u8> {
         match self {
             Self::V4(v4) => Ipv4Addr::octets(&v4),
-            Self::V6(v6) => Ipv6Addr::octets(&v6),
+            Self::V6(v6) => v6.octets(),  // Derefせず直接呼び出す
         }
     }
 }
